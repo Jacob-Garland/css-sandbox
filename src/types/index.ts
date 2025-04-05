@@ -1,0 +1,1 @@
+export type Framework = 'chakra' | 'bootstrap' | 'tailwind' | 'bulma';
