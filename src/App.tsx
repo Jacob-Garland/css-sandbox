@@ -1,13 +1,15 @@
 import { ChakraProvider, defaultSystem } from "@chakra-ui/react";
 import Header from "./components/Header";
+import BrowserWindow from "./components/BrowserWindow";
+import { useState } from "react";
 
-function App() {
+export default function App() {
+  const [selectedFramework, setSelectedFramework] = useState("chakra");
 
   return (
     <ChakraProvider value={defaultSystem}>
-      <Header />
+      <Header onFrameworkChange={setSelectedFramework} />
+      <BrowserWindow framework={selectedFramework} />
     </ChakraProvider>
   )
-}
-
-export default App
+};

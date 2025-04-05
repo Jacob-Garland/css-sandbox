@@ -1,12 +1,19 @@
 import { Box, Heading, IconButton, NativeSelect, HStack } from '@chakra-ui/react';
 import { LuSun, LuMoon } from 'react-icons/lu';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
 import { Framework } from '../types';
 
 
-export default function Header() {
-    const { framework, setFramework, theme, toggleTheme } = useContext(AppContext);
+export default function Header({onFrameworkChange}: { onFrameworkChange: (fw: Framework) => void }) {
+    const { theme, toggleTheme } = useContext(AppContext);
+    const [framework, setFramework] = useState('chakra' as Framework);
+
+    const handleFrameworkChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const selectedFramework = e.target.value as Framework;
+        setFramework(selectedFramework);
+        onFrameworkChange(selectedFramework);
+    };
 
     return (
         <Box position="fixed" top={0} left={0} right={0} py={4} bg="green.500" color="black" >
@@ -26,7 +33,7 @@ export default function Header() {
                 <NativeSelect.Root width="240px" size="md" mr={7}>
                     <NativeSelect.Field placeholder="Select framework"
                         value={framework}
-                        onChange={(e) => setFramework(e.currentTarget.value as Framework)}
+                        onChange={handleFrameworkChange}
                         color={'black'}
                         bg={'gray.400'}
                         fontWeight={"bold"}
