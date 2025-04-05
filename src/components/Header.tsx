@@ -1,8 +1,8 @@
-import { Box, Heading, IconButton, Select } from '@chakra-ui/react';
+import { Box, Heading, IconButton, NativeSelect } from '@chakra-ui/react';
 import { FaSun, FaMoon } from 'react-icons/fa';
 import { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
-import { Framework } from '../types';
+
 
 export default function Header() {
     const { framework, setFramework, theme, toggleTheme } = useContext(AppContext);
@@ -13,21 +13,21 @@ export default function Header() {
                 as={theme === 'light' ? FaMoon : FaSun}
                 onClick={toggleTheme}
                 aria-label="Toggle theme"
+                variant={"ghost"}
                 mr={4}
             />
             <Heading as="h1" size="lg" textAlign="center" display="inline">My App</Heading>
-            <Select
-                value={framework}
-                onChange={(e) => setFramework(e.target.value as Framework)}
-                width="200px"
-                float="right"
-                mr={4}
-            >
-                <option value="chakra">Chakra UI</option>
-                <option value="bootstrap">Bootstrap</option>
-                <option value="tailwind">Tailwind CSS</option>
-                <option value="bulma">Bulma</option>
-            </Select>
+            <NativeSelect.Root width="320px" size="md">
+                <NativeSelect.Field placeholder="Select framework"
+                    value={value}
+                    onChange={(e) => setValue(e.currentTarget.value)}
+                >
+                    <option value="chakra">Chakra UI</option>
+                    <option value="bootstrap">Bootstrap</option>
+                    <option value="tailwind">Tailwind CSS</option>
+                    <option value="bulma">Bulma</option>
+                </NativeSelect.Field>
+            </NativeSelect.Root>
         </Box>
     );
 };
