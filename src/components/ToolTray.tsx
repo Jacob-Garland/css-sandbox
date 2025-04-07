@@ -3,13 +3,17 @@ import { useState } from 'react';
 import { LuArrowRightLeft } from 'react-icons/lu';
 
 export default function ToolTray() {
-    const [value, setValue] = useState(parseColor('#34ff98'));
+    const [value, setValue] = useState(parseColor('#FFFFFF'));
 
     return (
-        <Box position="fixed" right={4} top={24} bottom={0} width="300px" bg="gray.300" p={4} borderRadius={"xl"}>
+        <Box position="fixed" right={4} top={24} bottom={0} width="300px" bg={{ base: "gray.200", _dark: "gray.600"}} p={4} borderRadius={"xl"}>
             <VStack gap={2}>
-                <Text fontSize="2xl" fontWeight="bold" color="green.600" mb={2}>Tool Tray</Text>
-                <Box width="100%" height="110px" bg="green.500" borderRadius="md" boxShadow="lg" display="flex-column" alignItems="center" justifyContent="center" p={4} mb={3}>
+                <Box width="100%" height="50px" display="flex" alignItems="center" justifyContent="center" gap={7}>
+                    <Text fontSize="2xl" fontWeight="bold" color={{ base: "green.600", _dark: "green.400" }} mb={2}>Tool Tray</Text>
+                    <Button size={'lg'} colorPalette={"red"}>Reset</Button>
+                </Box>
+
+                <Box width="100%" height="160px" bg="green.500" borderRadius="lg" boxShadow="lg" display="flex-column" alignItems="center" justifyContent="center" p={4} mb={2}>
                     <ColorPicker.Root
                         defaultValue={value}
                         onValueChangeEnd={(e) => setValue(e.value)}
@@ -36,9 +40,20 @@ export default function ToolTray() {
                             </ColorPicker.Positioner>
                         </Portal>
                     </ColorPicker.Root>
+                    <Text fontSize="lg" fontWeight="bold" color="black" mt={2} mb={1} textAlign={'center'}>Opacity</Text>
+                    <Slider.Root defaultValue={[30]}>
+                        <Slider.Control>
+                            <Slider.Track bg="red.100">
+                                <Slider.Range bg="tomato" />
+                            </Slider.Track>
+                            <Slider.Thumb index={0} boxSize={6} borderColor="tomato" shadow="md">
+                                <Box color="tomato" as={LuArrowRightLeft} />
+                            </Slider.Thumb>
+                        </Slider.Control>
+                    </Slider.Root>
                 </Box>
 
-                <Box width="100%" height="210px" bg="green.500" borderRadius="md" boxShadow="lg" display="flex-column" alignItems="center" justifyContent="center" p={4} mb={3}>
+                <Box width="100%" height="240px" bg="green.500" borderRadius="md" boxShadow="lg" display="flex-column" alignItems="center" justifyContent="center" p={4} mb={2}>
                     <Text fontSize="lg" fontWeight="bold" color="black" mb={1} textAlign={'center'}>Font Size</Text>
                     <Slider.Root defaultValue={[30]} mb={2}>
                     <Slider.Control>
@@ -50,8 +65,8 @@ export default function ToolTray() {
                         </Slider.Thumb>
                     </Slider.Control>
                     </Slider.Root>
-                    <Text fontSize="lg" fontWeight="bold" color="black" mt={2} textAlign={'center'}>Font Weight</Text>
-                    <Slider.Root defaultValue={[30]} mt={2}>
+                    <Text fontSize="lg" fontWeight="bold" color="black" mt={3} mb={2} textAlign={'center'}>Font Weight</Text>
+                    <Slider.Root defaultValue={[30]} mb={3}>
                     <Slider.Control>
                         <Slider.Track bg="red.100">
                             <Slider.Range bg="tomato" />
@@ -64,7 +79,55 @@ export default function ToolTray() {
                     <Text fontSize="lg" fontWeight="bold" color="black" mt={2} textAlign={'center'}>Font Family</Text>
                 </Box>
 
-                <Button size={'lg'} colorPalette={'red'}>Reset</Button>
+                <Box width="100%" height="153px" bg="green.500" borderRadius="md" boxShadow="lg" display="flex-column" alignItems="center" justifyContent="center" p={4} mb={2}>
+                    <Text fontSize="lg" fontWeight="bold" color="black" mb={1} textAlign={'center'}>Border Width</Text>
+                    <Slider.Root defaultValue={[30]} mb={2}>
+                    <Slider.Control>
+                        <Slider.Track bg="red.100">
+                            <Slider.Range bg="tomato" />
+                        </Slider.Track>
+                        <Slider.Thumb index={0} boxSize={6} borderColor="tomato" shadow="md">
+                            <Box color="tomato" as={LuArrowRightLeft} />
+                        </Slider.Thumb>
+                    </Slider.Control>
+                    </Slider.Root>
+                    <Text fontSize="lg" fontWeight="bold" color="black" mt={3} mb={2} textAlign={'center'}>Border Radius</Text>
+                    <Slider.Root defaultValue={[30]} mb={3}>
+                    <Slider.Control>
+                        <Slider.Track bg="red.100">
+                            <Slider.Range bg="tomato" />
+                        </Slider.Track>
+                        <Slider.Thumb index={0} boxSize={6} borderColor="tomato" shadow="md">
+                            <Box color="tomato" as={LuArrowRightLeft} />
+                        </Slider.Thumb>
+                    </Slider.Control>
+                    </Slider.Root>
+                </Box>
+
+                <Box width="100%" height="153px" bg="green.500" borderRadius="md" boxShadow="lg" display="flex-column" alignItems="center" justifyContent="center" p={4} mb={2}>
+                    <Text fontSize="lg" fontWeight="bold" color="black" mb={1} textAlign={'center'}>Margin</Text>
+                    <Slider.Root defaultValue={[30]} mb={2}>
+                    <Slider.Control>
+                        <Slider.Track bg="red.100">
+                            <Slider.Range bg="tomato" />
+                        </Slider.Track>
+                        <Slider.Thumb index={0} boxSize={6} borderColor="tomato" shadow="md">
+                            <Box color="tomato" as={LuArrowRightLeft} />
+                        </Slider.Thumb>
+                    </Slider.Control>
+                    </Slider.Root>
+                    <Text fontSize="lg" fontWeight="bold" color="black" mt={3} mb={2} textAlign={'center'}>Padding</Text>
+                    <Slider.Root defaultValue={[30]} mb={3}>
+                    <Slider.Control>
+                        <Slider.Track bg="red.100">
+                            <Slider.Range bg="tomato" />
+                        </Slider.Track>
+                        <Slider.Thumb index={0} boxSize={6} borderColor="tomato" shadow="md">
+                            <Box color="tomato" as={LuArrowRightLeft} />
+                        </Slider.Thumb>
+                    </Slider.Control>
+                    </Slider.Root>
+                </Box>
             </VStack>
         </Box>
     )
