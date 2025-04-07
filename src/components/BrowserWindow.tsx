@@ -1,19 +1,21 @@
 import { Box } from '@chakra-ui/react';
+import { BulmaCoffee } from './frameworks/BulmaCoffee';
+import { BootstrapCoffee } from './frameworks/BootstrapCoffee';
+import { ChakraCoffee } from './frameworks/ChakraCoffee';
+import { TailwindCoffee } from './frameworks/TailwindCoffee';
 
 export default function BrowserWindow({framework}: { framework: string }) {
     const renderFramework = () => {
         switch (framework) {
-            case 'chakra':
-                return <Box>Chakra UI</Box>;
-            case 'bootstrap':
-                return <Box>Bootstrap</Box>;
-            case 'tailwind':
-                return <Box>Tailwind CSS</Box>;
             case 'bulma':
-                return <Box>Bulma</Box>;
+                return <BulmaCoffee />;
+            case 'bootstrap':
+                return <BootstrapCoffee />;
+            case 'tailwind':
+                return <TailwindCoffee />;
             default:
-                return <Box>Select a framework</Box>; // default is <ChakraComponent />
-        } // Replace these with <ChakraComponent />, <BootstrapComponent />, etc.
+                return <ChakraCoffee />;
+        }
     };
 
     return (
