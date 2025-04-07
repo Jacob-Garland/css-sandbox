@@ -13,7 +13,7 @@ export default function ToolTray() {
                     <Button fontSize='lg' colorPalette="red" variant="solid">Reset</Button>
                 </Box>
 
-                <Box width="100%" height="160px" bg="green.500" borderRadius="lg" boxShadow="lg" display="flex-column" alignItems="center" justifyContent="center" p={4} mb={2}>
+                <Box width="100%" height="100px" bg="green.500" borderRadius="lg" boxShadow="lg" display="flex-column" alignItems="center" justifyContent="center" p={4} mb={2}>
                     <ColorPicker.Root
                         defaultValue={value}
                         onValueChangeEnd={(e) => setValue(e.value)}
@@ -23,7 +23,14 @@ export default function ToolTray() {
                             Color Picker
                         </ColorPicker.Label>
                         <ColorPicker.Control>
-                            <ColorPicker.Input fontSize={'lg'} fontWeight={'semibold'} borderColor={{ base: "white", _dark: "black" }} borderWidth={2} color={'black'} />
+                            <ColorPicker.Input 
+                                fontSize={'lg'} 
+                                fontWeight={'semibold'}
+                                bg={{ base: 'purple.300', _dark: 'purple.700' }} 
+                                borderColor={{ base: "white", _dark: "black" }} 
+                                borderWidth={2} 
+                                color={{ base: 'black', _dark: 'white' }}
+                                boxShadow={'md'} />
                             <ColorPicker.Trigger data-fit-content rounded='full'>
                                 <ColorPicker.ValueSwatch rounded='inherit' />
                             </ColorPicker.Trigger>
@@ -40,17 +47,6 @@ export default function ToolTray() {
                             </ColorPicker.Positioner>
                         </Portal>
                     </ColorPicker.Root>
-                    <Text fontSize="lg" fontWeight="bold" color="black" mt={2} mb={1} textAlign={'center'}>Opacity</Text>
-                    <Slider.Root defaultValue={[30]}>
-                        <Slider.Control>
-                            <Slider.Track bg="red.100">
-                                <Slider.Range bg="tomato" />
-                            </Slider.Track>
-                            <Slider.Thumb index={0} boxSize={6} borderColor="tomato" shadow="md">
-                                <Box color="tomato" as={LuArrowRightLeft} />
-                            </Slider.Thumb>
-                        </Slider.Control>
-                    </Slider.Root>
                 </Box>
 
                 <Box width="100%" height="240px" bg="green.500" borderRadius="md" boxShadow="lg" display="flex-column" alignItems="center" justifyContent="center" p={4} mb={2}>
@@ -79,13 +75,14 @@ export default function ToolTray() {
                     <Text fontSize="lg" fontWeight="bold" color="black" mt={2} mb={2} textAlign={'center'}>Font Family</Text>
                     <NativeSelect.Root width="240px" size="md">
                         <NativeSelect.Field placeholder="Select font family"
-                            color={'black'}
-                            bg={'yellow.200'}
+                            color={{ base: 'black', _dark: 'white' }}
+                            bg={{ base: 'purple.300', _dark: 'purple.700' }}
                             fontWeight={"bold"}
                             fontSize={"md"}
                             borderRadius={"md"}
                             borderWidth={2}
                             borderColor={{ base: "white", _dark: "black" }}
+                            boxShadow={'md'}
                             >
                             <option value="merriweather">Merriweather</option>
                             <option value="roboto">Roboto</option>

@@ -15,7 +15,7 @@ export default function Header({onFrameworkChange}: { onFrameworkChange: (fw: Fr
     };
 
     return (
-        <Box position="fixed" top={0} left={0} right={0} py={4} bg="green.500" color="black" boxShadow={"lg"}>
+        <Box position="fixed" top={0} left={0} right={0} py={4} bg="green.500" color="black" boxShadow="lg">
             <HStack justifyContent="space-between" alignItems="center" px={4}>
                 <ColorModeButton
                     aria-label="Toggle theme"
@@ -35,15 +35,14 @@ export default function Header({onFrameworkChange}: { onFrameworkChange: (fw: Fr
                         color={'black'}
                         rounded={"full"}
                         ></Icon>
-                    <NativeSelect.Root width="240px" size="md" mr={3}>
+                    <NativeSelect.Root width="240px" size="md" mr={3} boxShadow={"md"}>
                         <NativeSelect.Field placeholder="Select framework"
                             value={framework}
                             onChange={handleFrameworkChange}
-                            color={'black'}
-                            bg={'yellow.200'}
+                            color={{ base: 'black', _dark: 'white' }}
+                            bg={{ base: 'purple.300', _dark: 'purple.700' }}
                             fontWeight={"bold"}
                             fontSize={"lg"}
-                            borderRadius={"md"}
                             borderWidth={3}
                             borderColor={{ base: "white", _dark: "black" }}
                         >
