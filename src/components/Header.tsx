@@ -16,7 +16,7 @@ export default function Header({onFrameworkChange}: { onFrameworkChange: (fw: Fr
     };
 
     return (
-        <Box position="fixed" top={0} left={0} right={0} py={4} bg="green.500" color="black" >
+        <Box position="fixed" top={0} left={0} right={0} py={4} bg="green.500" color="black" boxShadow={"lg"}>
             <HStack justifyContent="space-between" alignItems="center" px={4}>
                 <IconButton
                     as={theme === 'light' ? LuMoon : LuSun}
@@ -27,7 +27,7 @@ export default function Header({onFrameworkChange}: { onFrameworkChange: (fw: Fr
                     rounded={"full"}
                     ml={7}
                 />
-                <Heading as="h1" size="lg" textAlign="center" fontStyle={"italic"} fontWeight={"bold"}>
+                <Heading size="4xl" textAlign="center" fontStyle={"italic"} fontWeight={"bold"}>
                     CSS Sandbox
                 </Heading>
                 <NativeSelect.Root width="240px" size="md" mr={7}>

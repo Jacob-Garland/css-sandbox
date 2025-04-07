@@ -18,7 +18,7 @@ export default function BrowserWindow({framework}: { framework: string }) {
 
     return (
         <Box width="80%" mt="80px" mx="auto" borderRadius="md">
-            <Box as="img" width="100%">
+            <Box width="100%">
                 <Box maxHeight="600px" overflowY="auto" p={4}>
                     {renderFramework()}
                 </Box>
