@@ -1,12 +1,11 @@
-import { Box, Heading, IconButton, NativeSelect, HStack } from '@chakra-ui/react';
-import { LuSun, LuMoon, LuArrowBigRightDash } from 'react-icons/lu';
-import { useContext, useState } from 'react';
-import { AppContext } from '../context/AppContext';
+import { Box, Heading, Icon, NativeSelect, HStack, Text } from '@chakra-ui/react';
+import { LuArrowBigRightDash } from 'react-icons/lu';
+import { useState } from 'react';
 import { Framework } from '../types';
+import { ColorModeButton } from './ui/color-mode';
 
 
 export default function Header({onFrameworkChange}: { onFrameworkChange: (fw: Framework) => void }) {
-    const { theme, toggleTheme } = useContext(AppContext);
     const [framework, setFramework] = useState('chakra' as Framework);
 
     const handleFrameworkChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -18,38 +17,35 @@ export default function Header({onFrameworkChange}: { onFrameworkChange: (fw: Fr
     return (
         <Box position="fixed" top={0} left={0} right={0} py={4} bg="green.500" color="black" boxShadow={"lg"}>
             <HStack justifyContent="space-between" alignItems="center" px={4}>
-                <IconButton
-                    as={theme === 'light' ? LuMoon : LuSun}
-                    onClick={toggleTheme}
+                <ColorModeButton
                     aria-label="Toggle theme"
                     variant={"ghost"}
                     color={'black'}
                     rounded={"full"}
                     ml={7}
                 />
-                <Heading size="4xl" textAlign="center" fontWeight={"bold"}>
+                <Heading textAlign="center" fontWeight={"extrabold"}>
                     CSS Sandbox
                 </Heading>
                 <HStack alignItems="center">
-                    <Heading fontWeight={"semibold"} color={'black'}>Framework</Heading>
-                    <IconButton
+                    <Text fontWeight={"semibold"} fontSize={'xl'} color={'black'} textAlign={'center'} mt={3}>Framework Selection</Text>
+                    <Icon
                         as={LuArrowBigRightDash}
-                        aria-label="Select framework"
-                        variant={"ghost"}
+                        boxSize={10}
                         color={'black'}
                         rounded={"full"}
-                        ></IconButton>
+                        ></Icon>
                     <NativeSelect.Root width="240px" size="md" mr={3}>
                         <NativeSelect.Field placeholder="Select framework"
                             value={framework}
                             onChange={handleFrameworkChange}
                             color={'black'}
-                            bg={'gray.400'}
+                            bg={'yellow.200'}
                             fontWeight={"bold"}
                             fontSize={"lg"}
                             borderRadius={"md"}
                             borderWidth={2}
-                            borderColor={theme === 'light' ? 'black' : 'white'}
+                            borderColor={'black'}
                         >
                             <option value="chakra">Chakra UI</option>
                             <option value="bootstrap">Bootstrap</option>
