@@ -6,7 +6,7 @@ export default function ToolTray() {
     const [value, setValue] = useState(parseColor('#34ff98'));
 
     return (
-        <Box position="fixed" right={0} top="90px" width="300px" height="100vh" bg="gray.300" p={4} borderRadius="lg">
+        <Box position="fixed" right={4} top={24} bottom={0} width="300px" bg="gray.300" p={4} borderRadius={"xl"}>
             <VStack gap={2}>
                 <Text fontSize="2xl" fontWeight="bold" color="green.600" mb={2}>Tool Tray</Text>
                 <Box width="100%" height="110px" bg="green.500" borderRadius="md" boxShadow="lg" display="flex-column" alignItems="center" justifyContent="center" p={4} mb={3}>
