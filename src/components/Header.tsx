@@ -24,7 +24,7 @@ export default function Header({onFrameworkChange}: { onFrameworkChange: (fw: Fr
                     rounded={"full"}
                     ml={7}
                 />
-                <Heading textAlign="center" fontWeight={"extrabold"}>
+                <Heading textAlign="center" fontWeight={"bold"}>
                     CSS Sandbox
                 </Heading>
                 <HStack alignItems="center">
@@ -44,14 +44,15 @@ export default function Header({onFrameworkChange}: { onFrameworkChange: (fw: Fr
                             fontWeight={"bold"}
                             fontSize={"lg"}
                             borderRadius={"md"}
-                            borderWidth={2}
-                            borderColor={'black'}
+                            borderWidth={3}
+                            borderColor={{ base: "white", _dark: "black" }}
                         >
                             <option value="chakra">Chakra UI</option>
                             <option value="bootstrap">Bootstrap</option>
                             <option value="tailwind">Tailwind CSS</option>
                             <option value="bulma">Bulma</option>
                         </NativeSelect.Field>
+                        <NativeSelect.Indicator />
                     </NativeSelect.Root>
                 </HStack>
             </HStack>

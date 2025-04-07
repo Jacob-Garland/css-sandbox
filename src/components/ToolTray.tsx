@@ -1,4 +1,4 @@
-import { Box, VStack, Text, ColorPicker, Portal, HStack, parseColor, Slider, Button } from '@chakra-ui/react';
+import { Box, VStack, Text, ColorPicker, Portal, HStack, parseColor, Slider, Button, NativeSelect } from '@chakra-ui/react';
 import { useState } from 'react';
 import { LuArrowRightLeft } from 'react-icons/lu';
 
@@ -10,7 +10,7 @@ export default function ToolTray() {
             <VStack gap={2}>
                 <Box width="100%" height="50px" display="flex" alignItems="center" justifyContent="center" gap={7}>
                     <Text fontSize="2xl" fontWeight="bold" color={{ base: "green.600", _dark: "green.400" }} mb={2}>Tool Tray</Text>
-                    <Button size={'lg'} colorPalette={"red"}>Reset</Button>
+                    <Button fontSize='lg' colorPalette="red" variant="solid">Reset</Button>
                 </Box>
 
                 <Box width="100%" height="160px" bg="green.500" borderRadius="lg" boxShadow="lg" display="flex-column" alignItems="center" justifyContent="center" p={4} mb={2}>
@@ -23,7 +23,7 @@ export default function ToolTray() {
                             Color Picker
                         </ColorPicker.Label>
                         <ColorPicker.Control>
-                            <ColorPicker.Input fontSize={'lg'} fontWeight={'semibold'} borderColor={'black'} color={'black'} />
+                            <ColorPicker.Input fontSize={'lg'} fontWeight={'semibold'} borderColor={{ base: "white", _dark: "black" }} borderWidth={2} color={'black'} />
                             <ColorPicker.Trigger data-fit-content rounded='full'>
                                 <ColorPicker.ValueSwatch rounded='inherit' />
                             </ColorPicker.Trigger>
@@ -76,7 +76,23 @@ export default function ToolTray() {
                         </Slider.Thumb>
                     </Slider.Control>
                     </Slider.Root>
-                    <Text fontSize="lg" fontWeight="bold" color="black" mt={2} textAlign={'center'}>Font Family</Text>
+                    <Text fontSize="lg" fontWeight="bold" color="black" mt={2} mb={2} textAlign={'center'}>Font Family</Text>
+                    <NativeSelect.Root width="240px" size="md">
+                        <NativeSelect.Field placeholder="Select font family"
+                            color={'black'}
+                            bg={'yellow.200'}
+                            fontWeight={"bold"}
+                            fontSize={"md"}
+                            borderRadius={"md"}
+                            borderWidth={2}
+                            borderColor={{ base: "white", _dark: "black" }}
+                            >
+                            <option value="merriweather">Merriweather</option>
+                            <option value="roboto">Roboto</option>
+                            <option value="lora">Lora</option>
+                            <option value="poppins">Poppins</option>
+                        </NativeSelect.Field>
+                    </NativeSelect.Root>
                 </Box>
 
                 <Box width="100%" height="153px" bg="green.500" borderRadius="md" boxShadow="lg" display="flex-column" alignItems="center" justifyContent="center" p={4} mb={2}>
