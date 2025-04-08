@@ -33,7 +33,7 @@ export default function Header() {
                         animationIterationCount={"infinite"}
                         ></Icon>
                     <NativeSelect.Root width="240px" size="md" mr={3} boxShadow={"md"}>
-                        <NativeSelect.Field placeholder="Select framework"
+                        <NativeSelect.Field
                             value={currentFramework}
                             onChange={(e) => setFramework(e.target.value as Framework)}
                             color={{ base: 'black', _dark: 'white' }}

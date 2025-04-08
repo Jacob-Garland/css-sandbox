@@ -1,8 +1,11 @@
 import 'bulma/css/bulma.min.css';
+import { useFontStore } from '../../state/useFontStore';
 
 export const BulmaCoffee = () => {
+  const { selectedFont } = useFontStore();
+
   return (
-    <div className="has-text-weight-normal">
+    <div className="has-text-weight-normal" style={{ fontFamily: selectedFont.family }}>
       {/* Hero Section */}
       <section
         className="hero is-dark is-medium has-background"

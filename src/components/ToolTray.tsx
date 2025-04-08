@@ -1,9 +1,11 @@
 import { Box, VStack, Text, ColorPicker, Portal, HStack, parseColor, Slider, Button, NativeSelect } from '@chakra-ui/react';
 import { useState } from 'react';
 import { LuArrowRightLeft } from 'react-icons/lu';
+import { useFontStore, fontOptions } from '../state/useFontStore';
 
 export default function ToolTray() {
     const [value, setValue] = useState(parseColor('#FFFFFF'));
+    const { selectedFont, setFont } = useFontStore();
 
     return (
         <Box position="fixed" right={4} top={28} bottom={0} width="300px" bg={{ base: "gray.200", _dark: "gray.600"}} p={4} borderRadius={"xl"}>
@@ -74,7 +76,7 @@ export default function ToolTray() {
                     </Slider.Root>
                     <Text fontSize="lg" fontWeight="bold"  color={{ base: 'black', _dark: 'white' }} mt={2} mb={2} textAlign={'center'}>Font Family</Text>
                     <NativeSelect.Root width="240px" size="md">
-                        <NativeSelect.Field placeholder="Select font family"
+                        <NativeSelect.Field
                             color={{ base: 'black', _dark: 'white' }}
                             bg={{ base: 'purple.300', _dark: 'purple.700' }}
                             fontWeight={"bold"}
@@ -83,11 +85,17 @@ export default function ToolTray() {
                             borderWidth={2}
                             borderColor={{ base: "white", _dark: "black" }}
                             boxShadow={'md'}
+                            value={selectedFont.label}
+                            onChange={(e) => {
+                                const font = fontOptions.find((f) => f.label === e.target.value);
+                                if (font) setFont(font);
+                            }}
                             >
-                            <option value="merriweather">Merriweather</option>
-                            <option value="roboto">Roboto</option>
-                            <option value="lora">Lora</option>
-                            <option value="poppins">Poppins</option>
+                            {fontOptions.map((font) => (
+                                <option key={font.label} value={font.label}>
+                                    {font.label}
+                                </option>
+                            ))}
                         </NativeSelect.Field>
                     </NativeSelect.Root>
                 </Box>

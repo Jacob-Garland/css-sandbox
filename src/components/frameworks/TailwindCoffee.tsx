@@ -1,6 +1,10 @@
+import { useFontStore } from "../../state/useFontStore";
+
 export const TailwindCoffee = () => {
+    const { selectedFont } = useFontStore();
+
     return (
-      <div className="font-sans text-gray-800">
+      <div className="font-sans text-gray-800" style={{ fontFamily: selectedFont.family }}>
         <section className="bg-[url('../../../public/coffee-bg.jpg')] bg-cover bg-center h-[400px] flex items-center justify-center text-white text-center">
             <div>
             <h1 className="text-5xl font-bold">Brewed Awakening</h1>

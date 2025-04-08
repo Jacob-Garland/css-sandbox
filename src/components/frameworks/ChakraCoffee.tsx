@@ -9,10 +9,13 @@ import {
     VStack,
     SimpleGrid
   } from '@chakra-ui/react';
+import { useFontStore } from '../../state/useFontStore'
   
   export const ChakraCoffee = () => {
+    const { selectedFont } = useFontStore();
+
     return (
-      <Box fontFamily="body">
+      <Box style={{ fontFamily: selectedFont.family }}>
         {/* Hero Section */}
         <Flex
           bgImage="../../../public/coffee-bg.jpg"

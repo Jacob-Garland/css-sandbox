@@ -1,8 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useFontStore } from '../../state/useFontStore';
 
 export const BootstrapCoffee = () => {
+    const { selectedFont } = useFontStore();
+    
   return (
-    <div className="font-sans">
+    <div className="font-sans" style={{ fontFamily: selectedFont.family }}>
       {/* Hero Section */}
       <section className="bg-dark text-white text-center d-flex align-items-center justify-content-center" style={{ height: '400px', backgroundImage: "../../../public/coffee-bg.jpg", backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div>
