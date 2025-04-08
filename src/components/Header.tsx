@@ -34,6 +34,10 @@ export default function Header({onFrameworkChange}: { onFrameworkChange: (fw: Fr
                         boxSize={10}
                         color={'black'}
                         rounded={"full"}
+                        animationName={"slide-to-right"}
+                        animationDuration={"2s"}
+                        animationTimingFunction={'ease-in-out'}
+                        animationIterationCount={"infinite"}
                         ></Icon>
                     <NativeSelect.Root width="240px" size="md" mr={3} boxShadow={"md"}>
                         <NativeSelect.Field placeholder="Select framework"
