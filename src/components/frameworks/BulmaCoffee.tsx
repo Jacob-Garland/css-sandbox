@@ -1,13 +1,13 @@
 import 'bulma/css/bulma.min.css';
 import { useFontStore } from '../../state/useFontStore';
-import { LuHouse, LuMenu, LuPhone } from 'react-icons/lu';
+import { LuHouse, LuMenu, LuPhone, LuStar } from 'react-icons/lu';
 
 export const BulmaCoffee = () => {
   const { selectedFont } = useFontStore();
 
   return (
     <div className="has-text-weight-normal" style={{ fontFamily: selectedFont.family }}>
-      {/* Header */}
+      {/* Nav Header */}
       <nav className="navbar is-black px-6 py-3">
         <div className="navbar-brand">
           <h1 className="has-text-white has-text-weight-bold is-size-4">Brewed Awakening</h1>
@@ -92,14 +92,39 @@ export const BulmaCoffee = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="section has-text-centered">
+      {/* Testimonials Section */}
+      <section className="section has-text-centered mt-4">
         <div className="container">
-          <h2 className="title is-3 mb-4 has-text-black">Customer Love</h2>
+          <h2 className="subtitle is-3 mb-3 has-text-black has-text-weight-semibold">Critic Review</h2>
           <p className="is-italic is-size-5 has-text-black">
-            "This place is my second home. Great vibes, even better coffee."
+            "Great vibes, even better coffee. And an unbeatable price!"
           </p>
-          <p className="mt-2 has-text-weight-semibold has-text-black">– Jessie M.</p>
+          <h3 className="subtitle mt-2 has-text-weight-semibold has-text-black">– The Bean Magazine</h3>
+        </div>
+      </section>
+
+      <section className="section has-background-white px-4 py-5 mb-6 shadow-lg rounded-4">
+        <div className="container" style={{ maxWidth: '80rem' }}>
+          <h2 className="subtitle is-2 has-text-left has-text-warning has-text-weight-semibold">What Our Customers Have To Say</h2>
+          <div className="columns is-flex is-flex-direction-row is-overflow-x-auto p-4 bg-gray-light shadow-lg rounded-3">
+            {Array.from({ length: 6 }).map((_, idx) => (
+              <div key={idx} className="card column is-narrow has-background-white has-shadow" style={{ minWidth: '300px' }}>
+                <header className="card-header bg-white">
+                  <p className="card-header-title has-text-black">John Doe</p>
+                </header>
+                <div className="card-content">
+                  <div className="content has-text-black is-italic">
+                    This coffee shop is amazing. The atmosphere is cozy and the coffee is the best in town!
+                  </div>
+                </div>
+                <footer className="card-footer bg-white">
+                  <div className="card-footer-item has-text-warning">
+                    {[...Array(5)].map((_, i) => <LuStar key={i} />)}
+                  </div>
+                </footer>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

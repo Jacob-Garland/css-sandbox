@@ -11,14 +11,14 @@ import {
     HStack
   } from '@chakra-ui/react';
 import { useFontStore } from '../../state/useFontStore';
-import { LuHouse, LuMenu, LuPhone } from 'react-icons/lu';
+import { LuHouse, LuMenu, LuPhone, LuStar } from 'react-icons/lu';
   
 export const ChakraCoffee = () => {
     const { selectedFont } = useFontStore();
 
     return (
       <Box style={{ fontFamily: selectedFont.family }}>
-        {/* Header */}
+        {/* Nav Header */}
         <Box bg="black" color="white" px={6} py={4}>
           <Flex align="center" justify="space-between">
             <Text fontSize="xl" fontWeight="bold">Brewed Awakening</Text>
@@ -90,14 +90,41 @@ export const ChakraCoffee = () => {
           </Container>
         </Box>
   
-        {/* Testimonials */}
-        <Container maxW="3xl" py={16} textAlign="center">
-          <Heading fontSize="3xl" mb={4} color={{ base: 'black', _dark: 'white' }}>Customer Love</Heading>
+        {/* Testimonials Section */}
+        <Container maxW="3xl" mt={16} py={6} textAlign="center">
+          <Heading fontSize="3xl" mb={4} color={{ base: 'black', _dark: 'white' }}>Critic Review</Heading>
           <Text fontSize="xl" fontStyle="italic" color={{ base: 'gray.800', _dark: 'gray.200' }}>
-            "This place is my second home. Great vibes, even better coffee."
+            "Great vibes, even better coffee. And an unbeatable price!"
           </Text>
-          <Text mt={2} fontWeight="bold" color={{ base: 'black', _dark: 'white' }}>– Jessie M.</Text>
+          <Text mt={2} fontWeight="bold" color={{ base: 'black', _dark: 'white' }}>– The Bean Magazine</Text>
         </Container>
+
+        <Box px={8} py={12} bg="white" shadow="lg" borderRadius="xl" mb={16}>
+          <Box maxW="6xl" mx="auto">
+            <Heading mb={6} fontSize="4xl" textAlign="left" color={'yellow.500'}>What Our Customers Have To Say</Heading>
+            <Flex gap={6} overflowX="auto" p={8} borderRadius="lg" bg="gray.50">
+              {Array.from({ length: 6 }).map((_, idx) => (
+                <Box
+                  key={idx}
+                  bg="white"
+                  shadow="2xl"
+                  borderRadius="md"
+                  p={6}
+                  minW="300px"
+                  flexShrink={0}
+                >
+                  <Heading size="sm" mb={2}>John Doe</Heading>
+                  <Text fontStyle="italic" mb={4}>
+                    This coffee shop is amazing. The atmosphere is cozy and the coffee is the best in town!
+                  </Text>
+                  <HStack>
+                    {[...Array(5)].map((_, i) => <LuStar key={i} color="yellow.400" />)}
+                  </HStack>
+                </Box>
+              ))}
+            </Flex>
+          </Box>
+        </Box>
   
         {/* Footer */}
         <Box bg="black" color="white" py={6}>

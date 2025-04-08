@@ -1,5 +1,5 @@
 import { useFontStore } from "../../state/useFontStore";
-import { LuHouse, LuMenu, LuPhone } from 'react-icons/lu';
+import { LuHouse, LuMenu, LuPhone, LuStar } from 'react-icons/lu';
 
 export const TailwindCoffee = () => {
     const { selectedFont } = useFontStore();
@@ -39,6 +39,7 @@ export const TailwindCoffee = () => {
           </div>
         </section>
   
+        {/* About Section */}
         <section className="py-16 px-4 max-w-5xl mx-auto mb-6">
           <h2 className="text-3xl font-bold mb-4 text-center text-black">About Us</h2>
           <p className="text-center text-black">
@@ -54,7 +55,8 @@ export const TailwindCoffee = () => {
             or ask our baristas for recommendations based on your taste preferences at your nearest Brewed Awakening!
           </p>
         </section>
-  
+
+        {/* Menu Section */}
         <section className="bg-white py-16 px-4 mb-6 shadow-lg">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-4 text-center">Featured Menu</h2>
@@ -72,7 +74,8 @@ export const TailwindCoffee = () => {
             </div>
           </div>
         </section>
-  
+
+        {/* Testimonials Section */}
         <section className="py-16 px-4 mb-4">
           <div className="max-w-5xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4 text-black">Customer Love</h2>
@@ -82,7 +85,27 @@ export const TailwindCoffee = () => {
             <p className="mt-2 font-semibold text-black">– Jessie M.</p>
           </div>
         </section>
-  
+
+        <div className="bg-gray-100 px-8 py-16">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl mb-6 text-left font-bold">What Our Customers Say</h2>
+            <div className="flex gap-6 overflow-x-auto">
+              {Array.from({ length: 6 }).map((_, idx) => (
+                <div key={idx} className="bg-white shadow-2xl rounded-md p-6 min-w-[300px] flex-shrink-0">
+                  <h3 className="text-lg font-semibold mb-2">John Doe</h3>
+                  <p className="italic text-black mb-4">
+                    This coffee shop is amazing. The atmosphere is cozy and the coffee is the best in town!
+                  </p>
+                  <div className="flex text-yellow-400">
+                    {[...Array(5)].map((_, i) => <LuStar key={i} className="text-xl" />)}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+              
+        {/* Footer */}
         <footer className="bg-black text-white text-center p-6">
           © {new Date().getFullYear()} Brewed Awakening. All rights reserved.
         </footer>
