@@ -8,7 +8,11 @@ export default function Header() {
     const { currentFramework, setFramework } =useFrameworkStore();
 
     return (
-        <Box position="fixed" top={0} left={0} right={0} py={4} bg={{ base: "green.500", _dark: "green.700"}} color="black" boxShadow="xl">
+        <Box position="fixed" top={0} left={0} right={0} py={4} 
+            bg={{ base: "green.500", _dark: "green.700"}} 
+            color="black" boxShadow="xl"
+            borderColor={{ base: 'white', _dark: 'black'}} 
+            borderWidth={3}>
             <HStack justifyContent="space-between" alignItems="center" px={4}>
                 <ColorModeButton
                     aria-label="Toggle theme"
