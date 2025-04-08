@@ -1,4 +1,5 @@
-import { Box, Heading, Icon, NativeSelect, HStack, Text } from '@chakra-ui/react';
+import { Box, Heading, Icon, NativeSelect, HStack } from '@chakra-ui/react';
+// import { Text } from '@chakra-ui/react';
 import { LuArrowBigRightDash } from 'react-icons/lu';
 import { Framework } from '../types';
 import { ColorModeButton } from './ui/color-mode';
@@ -21,14 +22,14 @@ export default function Header() {
                     rounded={"full"}
                     ml={7}
                 />
-                <Heading textAlign="center" fontWeight={"bold"} ml={32}>
+                <Heading textAlign="center" fontSize={'5xl'} fontWeight={"bold"} ml={32}>
                     CSS Sandbox
                 </Heading>
                 <HStack alignItems="center">
-                    <Text fontWeight={"semibold"} fontSize={'xl'} color={'black'} textAlign={'center'} mt={3}>Framework Selection</Text>
+                    {/* <Text fontWeight={"semibold"} fontSize={'xl'} color={'black'} textAlign={'center'} mt={3}>Framework Selection</Text> */}
                     <Icon
                         as={LuArrowBigRightDash}
-                        boxSize={10}
+                        boxSize={12}
                         color={'black'}
                         rounded={"full"}
                         animationName={"slide-to-right"}

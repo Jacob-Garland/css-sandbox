@@ -12,7 +12,7 @@ export default function WelcomeBox() {
                 borderRadius={"xl"} borderColor={'black'} 
                 borderWidth={2} boxShadow={"lg"} display="flex" 
                 flexDirection="column" alignItems="center">
-                <Heading fontSize={'2xl'} fontWeight={'bold'} color={{ base: 'green.500', _dark: 'green.400' }} mb={4} mt={8} p={4}>
+                <Heading fontSize={'3xl'} fontWeight={'bold'} color={{ base: 'green.500', _dark: 'green.400' }} mb={8} mt={8} p={4}>
                     Welcome to the CSS Framework Sandbox!
                 </Heading>
                 <Text fontSize={'lg'} color={{ base: 'black', _dark: 'white' }} textAlign={'center'}>
@@ -20,6 +20,15 @@ export default function WelcomeBox() {
                     You can then customize the CSS on each framework's sample page by clicking on components.<br />
                     Use the tool tray on the right to adjust various properties, utilizing the choosen framework.<br />
                     Explore the features and see how different frameworks handle styling and components!<br />
+                </Text>
+                <Text fontSize={'lg'} color={{ base: 'black', _dark: 'white' }} textAlign={'center'} mt={2}>
+                    We currently supports the following frameworks:
+                    <ul>
+                        <li>Chakra UI</li>
+                        <li>Bootstrap</li>
+                        <li>Tailwind CSS</li>
+                        <li>Bulma</li>
+                    </ul>
                 </Text>
                 <Text fontSize={'lg'} color={{ base: 'black', _dark: 'white' }} textAlign={'center'} mt={8}>
                     &copy; Prevail Software {new Date().getFullYear()}

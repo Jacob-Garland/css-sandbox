@@ -1,10 +1,11 @@
-import { Box, VStack, Text, ColorPicker, Portal, HStack, parseColor, Slider, Button, NativeSelect } from '@chakra-ui/react';
+import { Box, VStack, Text, ColorPicker, Portal, HStack, parseColor, Slider, Button, NativeSelect, ActionBar, Checkbox, CloseButton } from '@chakra-ui/react';
 import { useState } from 'react';
-import { LuArrowRightLeft } from 'react-icons/lu';
+import { LuArrowRightLeft, LuShare, LuTrash2 } from 'react-icons/lu';
 import { useFontStore, fontOptions } from '../state/useFontStore';
 import { useColorStore } from '../state/useColorStore';
 
 export default function ToolTray() {
+    const [checked, setChecked] = useState(false);
     const [value, setValue] = useState(parseColor('#FFFFFF'));
     const { selectedFont, setFont, resetFont } = useFontStore();
     const { resetColors } = useColorStore();
@@ -22,10 +23,10 @@ export default function ToolTray() {
             borderColor={{ base: 'white', _dark: 'black'}} 
             borderWidth={3}>
             <VStack gap={2}>
-                <Box width="100%" height="50px" display="flex" alignItems="center" justifyContent="center" gap={7}>
+                <HStack justifyContent="space-between" alignItems="center" width="100%">
                     <Text fontSize="2xl" fontWeight="bold" color={{ base: "green.600", _dark: "green.400" }} mb={2}>Tool Tray 🛠️</Text>
-                    <Button fontSize='lg' colorPalette="red" variant="solid" onClick={handleReset}>Reset</Button>
-                </Box>
+                    <Button fontSize={'lg'} colorPalette={'red'} variant={'solid'} onClick={handleReset}>Reset</Button>
+                </HStack>
 
                 <Box width="100%" height="100px" bg={{ base: "green.500", _dark: "green.700"}} borderRadius="lg" boxShadow="lg" display="flex-column" alignItems="center" justifyContent="center" p={4} mb={2}>
                     <ColorPicker.Root
@@ -161,6 +162,41 @@ export default function ToolTray() {
                     </Slider.Control>
                     </Slider.Root>
                 </Box>
+
+                <Checkbox.Root
+                    checked={checked}
+                    onCheckedChange={(e) => setChecked(!!e.checked)} p={2}>
+                    <Checkbox.HiddenInput />
+                    <Checkbox.Control mr={2} />
+                    <Checkbox.Label fontWeight={'bold'} fontSize={'md'}>  Show Action bar</Checkbox.Label>
+                </Checkbox.Root>
+
+                <ActionBar.Root
+                    open={checked}
+                    onOpenChange={(e) => setChecked(e.open)}
+                    closeOnInteractOutside={false}>
+                    <Portal>
+                    <ActionBar.Positioner>
+                        <ActionBar.Content>
+                        <ActionBar.SelectionTrigger color={{ base: 'black', _dark: 'white'}}>
+                            2 selected
+                        </ActionBar.SelectionTrigger>
+                        <ActionBar.Separator />
+                        <Button variant="outline" size="sm" color={{ base: 'black', _dark: 'white'}}>
+                            <LuTrash2 />
+                            Delete
+                        </Button>
+                        <Button variant="outline" size="sm" color={{ base: 'black', _dark: 'white'}}>
+                            <LuShare />
+                            Share
+                        </Button>
+                        <ActionBar.CloseTrigger asChild>
+                            <CloseButton size="sm" color={{ base: 'black', _dark: 'white'}} />
+                        </ActionBar.CloseTrigger>
+                        </ActionBar.Content>
+                    </ActionBar.Positioner>
+                    </Portal>
+                </ActionBar.Root>
             </VStack>
         </Box>
     )
