@@ -21,8 +21,8 @@ export default function BrowserWindow() {
     };
 
     return (
-        <Box position="fixed" top={28} left={4} right={64} bottom={0} bg="gray.600" boxShadow={"lg"} borderRadius={"xl"} borderColor={{ base: 'white', _dark: 'black'}} borderWidth={3} p={7}>
-            <Box width="97%">
+        <Box position="fixed" top={28} left={4} right={64} bottom={0} bg={{ base: "gray.200", _dark: "gray.600"}} boxShadow={"lg"} borderRadius={"xl"} borderColor={{ base: 'white', _dark: 'black'}} borderWidth={3} p={7}>
+            <Box width="96%" height="100%" bg={{ base: "gray.100", _dark: "gray.700"}} borderRadius={"xl"} boxShadow={"lg"} display="flex" flexDirection="column" alignItems="center">
                 <Box maxHeight="800px" overflowY={'auto'} p={4}>
                     {renderFramework()}
                 </Box>
