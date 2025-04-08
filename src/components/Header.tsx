@@ -15,7 +15,7 @@ export default function Header({onFrameworkChange}: { onFrameworkChange: (fw: Fr
     };
 
     return (
-        <Box position="fixed" top={0} left={0} right={0} py={4} bg="green.500" color="black" boxShadow="lg">
+        <Box position="fixed" top={0} left={0} right={0} py={4} bg={{ base: "green.500", _dark: "green.700"}} color="black" boxShadow="xl">
             <HStack justifyContent="space-between" alignItems="center" px={4}>
                 <ColorModeButton
                     aria-label="Toggle theme"

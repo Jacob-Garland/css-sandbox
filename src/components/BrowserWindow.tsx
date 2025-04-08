@@ -19,7 +19,7 @@ export default function BrowserWindow({framework}: { framework: string }) {
     };
 
     return (
-        <Box position="fixed" top={24} left={4} right={64} bottom={0} bg="gray.600" boxShadow={"lg"} borderRadius={"xl"} p={7}>
+        <Box position="fixed" top={28} left={4} right={64} bottom={0} bg="gray.600" boxShadow={"lg"} borderRadius={"xl"} p={7}>
             <Box width="98%">
                 <Box maxHeight="800px" overflowY="auto" p={4}>
                     {renderFramework()}

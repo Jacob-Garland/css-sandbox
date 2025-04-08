@@ -6,20 +6,20 @@ export default function ToolTray() {
     const [value, setValue] = useState(parseColor('#FFFFFF'));
 
     return (
-        <Box position="fixed" right={4} top={24} bottom={0} width="300px" bg={{ base: "gray.200", _dark: "gray.600"}} p={4} borderRadius={"xl"}>
+        <Box position="fixed" right={4} top={28} bottom={0} width="300px" bg={{ base: "gray.200", _dark: "gray.600"}} p={4} borderRadius={"xl"}>
             <VStack gap={2}>
                 <Box width="100%" height="50px" display="flex" alignItems="center" justifyContent="center" gap={7}>
                     <Text fontSize="2xl" fontWeight="bold" color={{ base: "green.600", _dark: "green.400" }} mb={2}>Tool Tray</Text>
                     <Button fontSize='lg' colorPalette="red" variant="solid">Reset</Button>
                 </Box>
 
-                <Box width="100%" height="100px" bg="green.500" borderRadius="lg" boxShadow="lg" display="flex-column" alignItems="center" justifyContent="center" p={4} mb={2}>
+                <Box width="100%" height="100px" bg={{ base: "green.500", _dark: "green.700"}} borderRadius="lg" boxShadow="lg" display="flex-column" alignItems="center" justifyContent="center" p={4} mb={2}>
                     <ColorPicker.Root
                         defaultValue={value}
                         onValueChangeEnd={(e) => setValue(e.value)}
                     >
                         <ColorPicker.HiddenInput />
-                        <ColorPicker.Label fontSize={'lg'} fontWeight={'bold'} color={'black'} textAlign={'center'}>
+                        <ColorPicker.Label fontSize={'lg'} fontWeight={'bold'} color={{ base: 'black', _dark: 'white' }} textAlign={'center'}>
                             Color Picker
                         </ColorPicker.Label>
                         <ColorPicker.Control>
@@ -49,8 +49,8 @@ export default function ToolTray() {
                     </ColorPicker.Root>
                 </Box>
 
-                <Box width="100%" height="240px" bg="green.500" borderRadius="md" boxShadow="lg" display="flex-column" alignItems="center" justifyContent="center" p={4} mb={2}>
-                    <Text fontSize="lg" fontWeight="bold" color="black" mb={1} textAlign={'center'}>Font Size</Text>
+                <Box width="100%" height="240px" bg={{ base: "green.500", _dark: "green.700"}} borderRadius="md" boxShadow="lg" display="flex-column" alignItems="center" justifyContent="center" p={4} mb={2}>
+                    <Text fontSize="lg" fontWeight="bold"  color={{ base: 'black', _dark: 'white' }} mb={1} textAlign={'center'}>Font Size</Text>
                     <Slider.Root defaultValue={[30]} mb={2}>
                     <Slider.Control>
                         <Slider.Track bg="red.100">
@@ -61,7 +61,7 @@ export default function ToolTray() {
                         </Slider.Thumb>
                     </Slider.Control>
                     </Slider.Root>
-                    <Text fontSize="lg" fontWeight="bold" color="black" mt={3} mb={2} textAlign={'center'}>Font Weight</Text>
+                    <Text fontSize="lg" fontWeight="bold"  color={{ base: 'black', _dark: 'white' }} mt={3} mb={2} textAlign={'center'}>Font Weight</Text>
                     <Slider.Root defaultValue={[30]} mb={3}>
                     <Slider.Control>
                         <Slider.Track bg="red.100">
@@ -72,7 +72,7 @@ export default function ToolTray() {
                         </Slider.Thumb>
                     </Slider.Control>
                     </Slider.Root>
-                    <Text fontSize="lg" fontWeight="bold" color="black" mt={2} mb={2} textAlign={'center'}>Font Family</Text>
+                    <Text fontSize="lg" fontWeight="bold"  color={{ base: 'black', _dark: 'white' }} mt={2} mb={2} textAlign={'center'}>Font Family</Text>
                     <NativeSelect.Root width="240px" size="md">
                         <NativeSelect.Field placeholder="Select font family"
                             color={{ base: 'black', _dark: 'white' }}
@@ -92,8 +92,8 @@ export default function ToolTray() {
                     </NativeSelect.Root>
                 </Box>
 
-                <Box width="100%" height="153px" bg="green.500" borderRadius="md" boxShadow="lg" display="flex-column" alignItems="center" justifyContent="center" p={4} mb={2}>
-                    <Text fontSize="lg" fontWeight="bold" color="black" mb={1} textAlign={'center'}>Border Width</Text>
+                <Box width="100%" height="153px" bg={{ base: "green.500", _dark: "green.700"}} borderRadius="md" boxShadow="lg" display="flex-column" alignItems="center" justifyContent="center" p={4} mb={2}>
+                    <Text fontSize="lg" fontWeight="bold"  color={{ base: 'black', _dark: 'white' }} mb={1} textAlign={'center'}>Border Width</Text>
                     <Slider.Root defaultValue={[30]} mb={2}>
                     <Slider.Control>
                         <Slider.Track bg="red.100">
@@ -104,7 +104,7 @@ export default function ToolTray() {
                         </Slider.Thumb>
                     </Slider.Control>
                     </Slider.Root>
-                    <Text fontSize="lg" fontWeight="bold" color="black" mt={3} mb={2} textAlign={'center'}>Border Radius</Text>
+                    <Text fontSize="lg" fontWeight="bold"  color={{ base: 'black', _dark: 'white' }} mt={3} mb={2} textAlign={'center'}>Border Radius</Text>
                     <Slider.Root defaultValue={[30]} mb={3}>
                     <Slider.Control>
                         <Slider.Track bg="red.100">
@@ -117,8 +117,8 @@ export default function ToolTray() {
                     </Slider.Root>
                 </Box>
 
-                <Box width="100%" height="153px" bg="green.500" borderRadius="md" boxShadow="lg" display="flex-column" alignItems="center" justifyContent="center" p={4} mb={2}>
-                    <Text fontSize="lg" fontWeight="bold" color="black" mb={1} textAlign={'center'}>Margin</Text>
+                <Box width="100%" height="153px" bg={{ base: "green.500", _dark: "green.700"}} borderRadius="md" boxShadow="lg" display="flex-column" alignItems="center" justifyContent="center" p={4} mb={2}>
+                    <Text fontSize="lg" fontWeight="bold"  color={{ base: 'black', _dark: 'white' }} mb={1} textAlign={'center'}>Margin</Text>
                     <Slider.Root defaultValue={[30]} mb={2}>
                     <Slider.Control>
                         <Slider.Track bg="red.100">
@@ -129,7 +129,7 @@ export default function ToolTray() {
                         </Slider.Thumb>
                     </Slider.Control>
                     </Slider.Root>
-                    <Text fontSize="lg" fontWeight="bold" color="black" mt={3} mb={2} textAlign={'center'}>Padding</Text>
+                    <Text fontSize="lg" fontWeight="bold"  color={{ base: 'black', _dark: 'white' }} mt={3} mb={2} textAlign={'center'}>Padding</Text>
                     <Slider.Root defaultValue={[30]} mb={3}>
                     <Slider.Control>
                         <Slider.Track bg="red.100">
