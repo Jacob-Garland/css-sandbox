@@ -3,10 +3,12 @@ import { BulmaCoffee } from './frameworks/BulmaCoffee';
 import { BootstrapCoffee } from './frameworks/BootstrapCoffee';
 import { ChakraCoffee } from './frameworks/ChakraCoffee';
 import { TailwindCoffee } from './frameworks/TailwindCoffee';
+import { useFrameworkStore } from '../state/useFrameworkStore';
 
-export default function BrowserWindow({framework}: { framework: string }) {
+export default function BrowserWindow() {
+    const { currentFramework } = useFrameworkStore();
     const renderFramework = () => {
-        switch (framework) {
+        switch (currentFramework) {
             case 'bulma':
                 return <BulmaCoffee />;
             case 'bootstrap':

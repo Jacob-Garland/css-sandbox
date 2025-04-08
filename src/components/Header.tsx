@@ -1,18 +1,11 @@
 import { Box, Heading, Icon, NativeSelect, HStack, Text } from '@chakra-ui/react';
 import { LuArrowBigRightDash } from 'react-icons/lu';
-import { useState } from 'react';
 import { Framework } from '../types';
 import { ColorModeButton } from './ui/color-mode';
+import { useFrameworkStore } from '../state/useFrameworkStore';
 
-
-export default function Header({onFrameworkChange}: { onFrameworkChange: (fw: Framework) => void }) {
-    const [framework, setFramework] = useState('chakra' as Framework);
-
-    const handleFrameworkChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const selectedFramework = e.target.value as Framework;
-        setFramework(selectedFramework);
-        onFrameworkChange(selectedFramework);
-    };
+export default function Header() {
+    const { currentFramework, setFramework } =useFrameworkStore();
 
     return (
         <Box position="fixed" top={0} left={0} right={0} py={4} bg={{ base: "green.500", _dark: "green.700"}} color="black" boxShadow="xl">
@@ -41,8 +34,8 @@ export default function Header({onFrameworkChange}: { onFrameworkChange: (fw: Fr
                         ></Icon>
                     <NativeSelect.Root width="240px" size="md" mr={3} boxShadow={"md"}>
                         <NativeSelect.Field placeholder="Select framework"
-                            value={framework}
-                            onChange={handleFrameworkChange}
+                            value={currentFramework}
+                            onChange={(e) => setFramework(e.target.value as Framework)}
                             color={{ base: 'black', _dark: 'white' }}
                             bg={{ base: 'purple.300', _dark: 'purple.700' }}
                             fontWeight={"bold"}
