@@ -1,11 +1,34 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useFontStore } from '../../state/useFontStore';
+import { LuHouse, LuMenu, LuPhone } from 'react-icons/lu';
 
 export const BootstrapCoffee = () => {
     const { selectedFont } = useFontStore();
     
   return (
     <div className="font-sans" style={{ fontFamily: selectedFont.family }}>
+      {/* Header */}
+      <header className="bg-black text-white px-4 py-3">
+        <div className="d-flex justify-content-between align-items-center">
+          <h1 className="h4 fw-bold">Brewed Awakening</h1>
+          <div className="d-flex gap-3">
+            <button className="btn btn-outline-warning d-flex align-items-center gap-2 border-0 fw-semibold">
+              <LuHouse /> Home
+            </button>
+            <button className="btn btn-outline-warning d-flex align-items-center gap-2 border-0 fw-semibold">
+              <LuMenu /> Menu
+            </button>
+            <button className="btn btn-outline-warning d-flex align-items-center gap-2 border-0 fw-semibold">
+              <LuPhone /> Contact
+            </button>
+          </div>
+          <div className="d-flex gap-2">
+            <button className="btn btn-outline-warning text-white border-0 fw-semibold" type='button'>Log In</button>
+            <button className="btn btn-warning text-black fw-semibold">Sign Up</button>
+          </div>
+        </div>
+      </header>
+
       {/* Hero Section */}
       <section className="bg-dark text-white text-center d-flex align-items-center justify-content-center" style={{ height: '400px', backgroundImage: "../../../public/coffee-bg.jpg", backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div>

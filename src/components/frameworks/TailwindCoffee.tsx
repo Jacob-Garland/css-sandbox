@@ -1,15 +1,39 @@
 import { useFontStore } from "../../state/useFontStore";
+import { LuHouse, LuMenu, LuPhone } from 'react-icons/lu';
 
 export const TailwindCoffee = () => {
     const { selectedFont } = useFontStore();
 
     return (
       <div className="font-sans text-gray-800" style={{ fontFamily: selectedFont.family }}>
-        <section className="bg-cover bg-center h-[400px] flex items-center justify-center text-white text-center">
+        {/* Nav Header */}
+        <header className="flex flex-row bg-black text-white px-6 py-4">
+          <div className=" flex-row justify-between items-center">
+            <h2 className="font-bold">Brewed Awakening</h2>
+            <nav className="flex-auto gap-4">
+              <button className="flex items-center gap-2 px-3 py-2 hover:bg-yellow-400 hover:text-black rounded">
+                <LuHouse /> Home
+              </button>
+              <button className="flex items-center gap-2 px-3 py-2 hover:bg-yellow-400 hover:text-black rounded">
+                <LuMenu /> Menu
+              </button>
+              <button className="flex items-center gap-2 px-3 py-2 hover:bg-yellow-400 hover:text-black rounded">
+                <LuPhone /> Contact
+              </button>
+            </nav>
+            <div className="flex">
+              <button className="border text-white px-3 py-2 rounded">Log In</button>
+              <button className="border text-white px-3 py-2 rounded">Sign Up</button>
+            </div>
+          </div>
+        </header>
+
+        {/* Hero Section */}
+        <section className="bg-black bg-cover bg-center h-[400px] flex items-center justify-center text-white text-center mb-6">
             <div>
             <h1 className="text-5xl font-bold">Brewed Awakening</h1>
             <p className="mt-4 text-xl">Your daily dose of craft coffee</p>
-            <button className="mt-6 mb-6 px-6 py-2 bg-yellow-500 hover:bg-yellow-400 text-black font-semibold rounded">
+            <button className="mt-6 mb-6 px-6 py-2 bg-yellow-500 hover:bg-yellow-400 text-white font-semibold rounded">
               Explore Menu
             </button>
           </div>
@@ -17,7 +41,7 @@ export const TailwindCoffee = () => {
   
         <section className="py-16 px-4 max-w-5xl mx-auto mb-6">
           <h2 className="text-3xl font-bold mb-4 text-center text-black">About Us</h2>
-          <p className="text-center text-black text-lg leading-relaxed">
+          <p className="text-center text-black">
             Brewed Awakening is your cozy corner coffee hub. We specialize in organic beans,
             ethically sourced, roasted locally, and brewed fresh with love and precision.
           </p>

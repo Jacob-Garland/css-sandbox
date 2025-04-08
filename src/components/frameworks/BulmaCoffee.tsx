@@ -1,11 +1,41 @@
 import 'bulma/css/bulma.min.css';
 import { useFontStore } from '../../state/useFontStore';
+import { LuHouse, LuMenu, LuPhone } from 'react-icons/lu';
 
 export const BulmaCoffee = () => {
   const { selectedFont } = useFontStore();
 
   return (
     <div className="has-text-weight-normal" style={{ fontFamily: selectedFont.family }}>
+      {/* Header */}
+      <nav className="navbar is-black px-6 py-3">
+        <div className="navbar-brand">
+          <h1 className="has-text-white has-text-weight-bold is-size-4">Brewed Awakening</h1>
+        </div>
+        <div className="navbar-menu ml-6">
+          <div className="mx-auto navbar-start px-6">
+            <button className="button is-outlined is-warning has-text-warning has-text-weight-semibold mr-3">
+              <span className="icon"><LuHouse /></span>
+              <span>Home</span>
+            </button>
+            <button className="button is-outlined is-warning has-text-warning has-text-weight-semibold mr-3">
+              <span className="icon"><LuMenu /></span>
+              <span>Menu</span>
+            </button>
+            <button className="button is-outlined is-warning has-text-warning has-text-weight-semibold mr-3">
+              <span className="icon"><LuPhone /></span>
+              <span>Contact</span>
+            </button>
+          </div>
+          <div className="navbar-end">
+            <div className="buttons">
+              <button className="button is-outlined has-text-warning border-warning">Log In</button>
+              <button className="button has-background-warning has-text-black">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
       {/* Hero Section */}
       <section
         className="hero is-dark is-medium has-background"

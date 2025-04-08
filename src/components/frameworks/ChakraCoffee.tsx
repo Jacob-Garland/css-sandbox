@@ -7,19 +7,37 @@ import {
     Heading,
     Text,
     VStack,
-    SimpleGrid
+    SimpleGrid,
+    HStack
   } from '@chakra-ui/react';
-import { useFontStore } from '../../state/useFontStore'
+import { useFontStore } from '../../state/useFontStore';
+import { LuHouse, LuMenu, LuPhone } from 'react-icons/lu';
   
 export const ChakraCoffee = () => {
     const { selectedFont } = useFontStore();
 
     return (
       <Box style={{ fontFamily: selectedFont.family }}>
+        {/* Header */}
+        <Box bg="black" color="white" px={6} py={4}>
+          <Flex align="center" justify="space-between">
+            <Text fontSize="xl" fontWeight="bold">Brewed Awakening</Text>
+            <HStack gap={4}>
+              <Button variant="ghost" _hover={{ bg: 'yellow.400', color: 'black' }} borderRadius={'xl'} p={2} color={'yellow.400'}><LuHouse />Home</Button>
+              <Button variant="ghost" _hover={{ bg: 'yellow.400', color: 'black' }} borderRadius={'xl'} p={2} color={'yellow.400'}><LuMenu />Menu</Button>
+              <Button variant="ghost" _hover={{ bg: 'yellow.400', color: 'black' }} borderRadius={'xl'} p={2} color={'yellow.400'}><LuPhone />Contact</Button>
+            </HStack>
+            <HStack gap={2}>
+              <Button variant='ghost' borderColor="yellow.400" borderRadius={'md'} color="yellow.400" _hover={{ bg: 'yellow.300', color: 'white' }} p={2}>Log In</Button>
+              <Button bg="yellow.400" color="black" _hover={{ bg: 'yellow.300', color: 'white' }} borderRadius={'md'} p={2}>Sign Up</Button>
+            </HStack>
+          </Flex>
+        </Box>
+
         {/* Hero Section */}
         <Flex
           // bgImage="../../../public/coffee-bg.jpg"
-          bgColor={'black'}
+          bgColor={'gray.800'}
           bgSize="cover"
           bgPos="center"
           h="400px"
@@ -30,7 +48,7 @@ export const ChakraCoffee = () => {
           <VStack gap={4}>
             <Heading fontSize="5xl" color={'white'}>Brewed Awakening</Heading>
             <Text fontSize="xl" color={'white'}>Your daily dose of craft coffee</Text>
-            <Button colorScheme="yellow" color="white" size="lg" mt={4} fontWeight="semibold">
+            <Button bg="yellow.400" color="black" _hover={{ bg: 'yellow.300', color: 'white' }} borderRadius={'md'} p={2} size="lg" mt={4} fontWeight="semibold">
               Explore Menu
             </Button>
           </VStack>
