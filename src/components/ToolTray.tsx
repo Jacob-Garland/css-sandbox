@@ -167,8 +167,8 @@ export default function ToolTray() {
                     checked={checked}
                     onCheckedChange={(e) => setChecked(!!e.checked)} p={2}>
                     <Checkbox.HiddenInput />
-                    <Checkbox.Control mr={2} />
-                    <Checkbox.Label fontWeight={'bold'} fontSize={'md'}>  Show Action bar</Checkbox.Label>
+                    <Checkbox.Control mr={2} borderColor={{ base: 'black', _dark: 'white'}} />
+                    <Checkbox.Label fontWeight={'bold'} fontSize={'md'} color={{ base: 'black', _dark: 'white'}}>  Show Action bar</Checkbox.Label>
                 </Checkbox.Root>
 
                 <ActionBar.Root

@@ -18,26 +18,26 @@ export const ChakraCoffee = () => {
       <Box style={{ fontFamily: selectedFont.family }}>
         {/* Hero Section */}
         <Flex
-          bgImage="../../../public/coffee-bg.jpg"
+          // bgImage="../../../public/coffee-bg.jpg"
+          bgColor={'black'}
           bgSize="cover"
           bgPos="center"
           h="400px"
           align="center"
           justify="center"
           textAlign="center"
-          color="white"
         >
           <VStack gap={4}>
-            <Heading fontSize="5xl">Brewed Awakening</Heading>
-            <Text fontSize="xl">Your daily dose of craft coffee</Text>
-            <Button colorScheme="yellow" color="black">
+            <Heading fontSize="5xl" color={'white'}>Brewed Awakening</Heading>
+            <Text fontSize="xl" color={'white'}>Your daily dose of craft coffee</Text>
+            <Button colorScheme="yellow" color="white" size="lg" mt={4} fontWeight="semibold">
               Explore Menu
             </Button>
           </VStack>
         </Flex>
   
         {/* About Section */}
-        <Container maxW="4xl" py={16} textAlign="center">
+        <Container maxW="4xl" py={16} color={{ base: 'black', _dark: 'white' }} textAlign="center">
           <Heading fontSize="3xl" mb={4}>About Us</Heading>
           <Text fontSize="lg">
             Brewed Awakening is your cozy corner coffee hub. We specialize in organic beans,
@@ -66,11 +66,11 @@ export const ChakraCoffee = () => {
   
         {/* Testimonials */}
         <Container maxW="3xl" py={16} textAlign="center">
-          <Heading fontSize="3xl" mb={4}>Customer Love</Heading>
-          <Text fontSize="xl" fontStyle="italic">
+          <Heading fontSize="3xl" mb={4} color={{ base: 'black', _dark: 'white' }}>Customer Love</Heading>
+          <Text fontSize="xl" fontStyle="italic" color={{ base: 'gray.800', _dark: 'gray.200' }}>
             "This place is my second home. Great vibes, even better coffee."
           </Text>
-          <Text mt={2} fontWeight="bold">– Jessie M.</Text>
+          <Text mt={2} fontWeight="bold" color={{ base: 'black', _dark: 'white' }}>– Jessie M.</Text>
         </Container>
   
         {/* Footer */}

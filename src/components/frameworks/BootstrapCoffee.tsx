@@ -18,7 +18,7 @@ export const BootstrapCoffee = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-5 px-3 container text-center">
+      <section className="py-5 px-3 container text-center text-black">
         <h2 className="mb-4 fw-bold">About Us</h2>
         <p className="fs-5">
           Brewed Awakening is your cozy corner coffee hub. We specialize in organic beans,
@@ -50,13 +50,13 @@ export const BootstrapCoffee = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-5 text-center container">
+      <section className="py-5 text-center text-black container">
         <h2 className="fw-bold mb-4">Customer Love</h2>
         <figure className="blockquote">
           <p className="fs-5 fst-italic">
             "This place is my second home. Great vibes, even better coffee."
           </p>
-          <figcaption className="blockquote-footer mt-2">
+          <figcaption className="blockquote-footer mt-2 text-black">
             Jessie M.
           </figcaption>
         </figure>

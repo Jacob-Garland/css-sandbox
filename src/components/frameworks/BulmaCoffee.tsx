@@ -25,8 +25,8 @@ export const BulmaCoffee = () => {
       {/* About Section */}
       <section className="section has-text-centered">
         <div className="container">
-          <h2 className="title is-3">About Us</h2>
-          <p className="subtitle is-5">
+          <h2 className="title is-3 has-text-black">About Us</h2>
+          <p className="subtitle is-5 has-text-black">
             Brewed Awakening is your cozy corner coffee hub. We specialize in organic beans,
             ethically sourced, roasted locally, and brewed fresh with love and precision.
           </p>
@@ -36,7 +36,7 @@ export const BulmaCoffee = () => {
       {/* Menu Section */}
       <section className="section has-background-light">
         <div className="container">
-          <h2 className="title is-3 has-text-centered mb-6">Featured Menu</h2>
+          <h2 className="title is-3 has-text-centered has-text-black mb-6">Featured Menu</h2>
           <div className="columns is-variable is-8">
             {[
               { title: "Caramel Macchiato", desc: "Rich espresso layered with velvety milk and caramel." },
@@ -57,11 +57,11 @@ export const BulmaCoffee = () => {
       {/* Testimonials */}
       <section className="section has-text-centered">
         <div className="container">
-          <h2 className="title is-3 mb-4">Customer Love</h2>
-          <p className="is-italic is-size-5">
+          <h2 className="title is-3 mb-4 has-text-black">Customer Love</h2>
+          <p className="is-italic is-size-5 has-text-black">
             "This place is my second home. Great vibes, even better coffee."
           </p>
-          <p className="mt-2 has-text-weight-semibold">– Jessie M.</p>
+          <p className="mt-2 has-text-weight-semibold has-text-black">– Jessie M.</p>
         </div>
       </section>
 
