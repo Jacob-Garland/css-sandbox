@@ -5,14 +5,19 @@ import { useFontStore, fontOptions } from '../state/useFontStore';
 
 export default function ToolTray() {
     const [value, setValue] = useState(parseColor('#FFFFFF'));
-    const { selectedFont, setFont } = useFontStore();
+    const { selectedFont, setFont, resetFont } = useFontStore();
+
+    const handleReset = () => {
+        setValue(parseColor('#FFFFFF'));
+        resetFont();
+    };
 
     return (
         <Box position="fixed" right={4} top={28} bottom={0} width="300px" bg={{ base: "gray.200", _dark: "gray.600"}} p={4} borderRadius={"xl"}>
             <VStack gap={2}>
                 <Box width="100%" height="50px" display="flex" alignItems="center" justifyContent="center" gap={7}>
                     <Text fontSize="2xl" fontWeight="bold" color={{ base: "green.600", _dark: "green.400" }} mb={2}>Tool Tray</Text>
-                    <Button fontSize='lg' colorPalette="red" variant="solid">Reset</Button>
+                    <Button fontSize='lg' colorPalette="red" variant="solid" onClick={handleReset}>Reset</Button>
                 </Box>
 
                 <Box width="100%" height="100px" bg={{ base: "green.500", _dark: "green.700"}} borderRadius="lg" boxShadow="lg" display="flex-column" alignItems="center" justifyContent="center" p={4} mb={2}>

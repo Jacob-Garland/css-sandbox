@@ -9,6 +9,7 @@ interface FontOption {
 interface FontStore {
   selectedFont: FontOption;
   setFont: (font: FontOption) => void;
+  resetFont: () => void;
 }
 
 const defaultFont: FontOption = {
@@ -48,16 +49,20 @@ export const fontOptions: FontOption[] = [
 export const useFontStore = create<FontStore>((set) => ({
   selectedFont: defaultFont,
   setFont: (font) => {
+    document.querySelectorAll('link[data-font]').forEach(link => link.remove());
+
     if (font.link) {
-      const existing = document.querySelector(`link[data-font="${font.label}"]`);
-      if (!existing) {
-        const link = document.createElement('link');
-        link.href = font.link;
-        link.rel = 'stylesheet';
-        link.setAttribute('data-font', font.label);
-        document.head.appendChild(link);
-      }
+      const link = document.createElement('link');
+      link.href = font.link;
+      link.rel = 'stylesheet';
+      link.setAttribute('data-font', font.label);
+      document.head.appendChild(link);
     }
+    
     set({ selectedFont: font });
   },
+  resetFont: () => {
+    document.querySelectorAll('link[data-font]').forEach(link => link.remove());
+    set({ selectedFont: defaultFont });
+  }
 }));
