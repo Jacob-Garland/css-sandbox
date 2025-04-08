@@ -12,16 +12,20 @@ export default function WelcomeBox() {
                 borderRadius={"xl"} borderColor={'black'} 
                 borderWidth={2} boxShadow={"lg"} display="flex" 
                 flexDirection="column" alignItems="center">
-                <Heading fontSize={'2xl'} fontWeight={'bold'} color={{ base: 'green.600', _dark: 'green.400' }} mb={4} mt={8} p={4}>
-                    Welcome to CSS Sandbox!
+                <Heading fontSize={'2xl'} fontWeight={'bold'} color={{ base: 'green.500', _dark: 'green.400' }} mb={4} mt={8} p={4}>
+                    Welcome to the CSS Framework Sandbox!
                 </Heading>
                 <Text fontSize={'lg'} color={{ base: 'black', _dark: 'white' }} textAlign={'center'}>
-                    Start by choosing a framework from the dropdown menu in the top right corner.<br />
-                    You can then customize the CSS properties on each framework's sample page by clicking on components.<br />
-                    Use the tool tray on the right to adjust various CSS properties.<br />
+                    Start by choosing a popular CSS framework from the dropdown menu in the top right corner.<br />
+                    You can then customize the CSS on each framework's sample page by clicking on components.<br />
+                    Use the tool tray on the right to adjust various properties, utilizing the choosen framework.<br />
+                    Explore the features and see how different frameworks handle styling and components!<br />
                 </Text>
                 <Text fontSize={'lg'} color={{ base: 'black', _dark: 'white' }} textAlign={'center'} mt={8}>
-                    &copy; Prevail Software
+                    &copy; Prevail Software {new Date().getFullYear()}
+                </Text>
+                <Text fontSize={'lg'} color={{ base: 'black', _dark: 'white' }} textAlign={'center'}>
+                    Made with ❤️, Chakra UI, & React
                 </Text>
             </Box>
         </Box>

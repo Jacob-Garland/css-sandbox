@@ -11,7 +11,7 @@ export default function Header() {
         <Box position="fixed" top={0} left={0} right={0} py={4} 
             bg={{ base: "green.500", _dark: "green.700"}} 
             color="black" boxShadow="xl"
-            borderColor={{ base: 'white', _dark: 'black'}} 
+            borderColor={'black'} 
             borderWidth={3}>
             <HStack justifyContent="space-between" alignItems="center" px={4}>
                 <ColorModeButton
@@ -21,7 +21,7 @@ export default function Header() {
                     rounded={"full"}
                     ml={7}
                 />
-                <Heading textAlign="center" fontWeight={"bold"}>
+                <Heading textAlign="center" fontWeight={"bold"} ml={32}>
                     CSS Sandbox
                 </Heading>
                 <HStack alignItems="center">

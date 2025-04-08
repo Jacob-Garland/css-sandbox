@@ -23,7 +23,7 @@ export default function ToolTray() {
             borderWidth={3}>
             <VStack gap={2}>
                 <Box width="100%" height="50px" display="flex" alignItems="center" justifyContent="center" gap={7}>
-                    <Text fontSize="2xl" fontWeight="bold" color={{ base: "green.600", _dark: "green.400" }} mb={2}>Tool Tray</Text>
+                    <Text fontSize="2xl" fontWeight="bold" color={{ base: "green.600", _dark: "green.400" }} mb={2}>Tool Tray 🛠️</Text>
                     <Button fontSize='lg' colorPalette="red" variant="solid" onClick={handleReset}>Reset</Button>
                 </Box>
 
