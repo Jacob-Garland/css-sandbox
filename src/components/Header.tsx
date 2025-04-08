@@ -5,7 +5,7 @@ import { ColorModeButton } from './ui/color-mode';
 import { useFrameworkStore } from '../state/useFrameworkStore';
 
 export default function Header() {
-    const { currentFramework, setFramework } =useFrameworkStore();
+    const { currentFramework, setFramework } = useFrameworkStore();
 
     return (
         <Box position="fixed" top={0} left={0} right={0} py={4} 
@@ -37,8 +37,8 @@ export default function Header() {
                         animationIterationCount={"infinite"}
                         ></Icon>
                     <NativeSelect.Root width="240px" size="md" mr={3} boxShadow={"md"}>
-                        <NativeSelect.Field
-                            value={currentFramework}
+                        <NativeSelect.Field placeholder="Select Framework"
+                            value={currentFramework ?? ''}
                             onChange={(e) => setFramework(e.target.value as Framework)}
                             color={{ base: 'black', _dark: 'white' }}
                             bg={{ base: 'purple.300', _dark: 'purple.700' }}

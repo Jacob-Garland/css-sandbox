@@ -11,7 +11,7 @@ import {
   } from '@chakra-ui/react';
 import { useFontStore } from '../../state/useFontStore'
   
-  export const ChakraCoffee = () => {
+export const ChakraCoffee = () => {
     const { selectedFont } = useFontStore();
 
     return (

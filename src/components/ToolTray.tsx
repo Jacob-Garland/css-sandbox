@@ -2,13 +2,15 @@ import { Box, VStack, Text, ColorPicker, Portal, HStack, parseColor, Slider, But
 import { useState } from 'react';
 import { LuArrowRightLeft } from 'react-icons/lu';
 import { useFontStore, fontOptions } from '../state/useFontStore';
+import { useColorStore } from '../state/useColorStore';
 
 export default function ToolTray() {
     const [value, setValue] = useState(parseColor('#FFFFFF'));
     const { selectedFont, setFont, resetFont } = useFontStore();
+    const { resetColors } = useColorStore();
 
     const handleReset = () => {
-        setValue(parseColor('#FFFFFF'));
+        resetColors();
         resetFont();
     };
 
