@@ -55,11 +55,19 @@ export const ChakraCoffee = () => {
         </Flex>
   
         {/* About Section */}
-        <Container maxW="4xl" py={16} color={{ base: 'black', _dark: 'white' }} textAlign="center">
-          <Heading fontSize="3xl" mb={4}>About Us</Heading>
-          <Text fontSize="lg">
+        <Container maxW="4xl" py={16} textAlign="center">
+          <Heading fontSize="3xl" mb={4} color={{ base: 'yellow.600', _dark: 'yellow.300' }}>About Us</Heading>
+          <Text fontSize="lg" color={{ base: 'black', _dark: 'white' }}>
             Brewed Awakening is your cozy corner coffee hub. We specialize in organic beans,
             ethically sourced, roasted locally, and brewed fresh with love and precision.
+            Our baristas are passionate about coffee and are here to craft the perfect cup for you.
+            Whether you prefer a classic espresso or a trendy cold brew, we have something for everyone.
+            Our inviting atmosphere is perfect for catching up with friends, studying, or simply enjoying a moment of peace.
+            We believe in quality over quantity, and our commitment to sustainability means that every cup you enjoy is made with care for the planet.
+            <br />
+            <br />
+            Join us for a cup and experience the difference of quality coffee made with care. Browse our menu to find your new favorite drink, 
+            or ask our baristas for recommendations based on your taste preferences at your nearest Brewed Awakening!
           </Text>
         </Container>
   

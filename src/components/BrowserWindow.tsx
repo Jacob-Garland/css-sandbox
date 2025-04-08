@@ -34,7 +34,7 @@ export default function BrowserWindow() {
                 borderRadius={"xl"} borderColor={'black'} 
                 borderWidth={2} boxShadow={"lg"} display="flex" 
                 flexDirection="column" alignItems="center">
-                <Box maxHeight="800px" overflowY={'auto'} p={4}>
+                <Box maxHeight="800px" overflowY={'auto'} p={4} bg={{ base: "#FFE3C9", _dark: "#5E452D"}}>
                     {renderFramework()}
                 </Box>
             </Box>

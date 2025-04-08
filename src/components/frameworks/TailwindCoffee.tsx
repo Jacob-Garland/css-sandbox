@@ -44,6 +44,14 @@ export const TailwindCoffee = () => {
           <p className="text-center text-black">
             Brewed Awakening is your cozy corner coffee hub. We specialize in organic beans,
             ethically sourced, roasted locally, and brewed fresh with love and precision.
+            Our baristas are passionate about coffee and are here to craft the perfect cup for you.
+            Whether you prefer a classic espresso or a trendy cold brew, we have something for everyone.
+            Our inviting atmosphere is perfect for catching up with friends, studying, or simply enjoying a moment of peace.
+            We believe in quality over quantity, and our commitment to sustainability means that every cup you enjoy is made with care for the planet.
+            <br />
+            <br />
+            Join us for a cup and experience the difference of quality coffee made with care. Browse our menu to find your new favorite drink, 
+            or ask our baristas for recommendations based on your taste preferences at your nearest Brewed Awakening!
           </p>
         </section>
   
