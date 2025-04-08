@@ -22,7 +22,8 @@ export default function Header() {
                     rounded={"full"}
                     ml={7}
                 />
-                <Heading textAlign="center" fontSize={'5xl'} fontWeight={"bold"} ml={32}>
+                <Heading textAlign="center" fontSize={'5xl'} fontWeight={"bold"}> 
+                    {/* ml={32} add this to the heading if you add back the text commented out below */}
                     CSS Sandbox
                 </Heading>
                 <HStack alignItems="center">
